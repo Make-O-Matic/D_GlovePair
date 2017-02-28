@@ -1,0 +1,80 @@
+MOM-Basis/COLLECTION/RECORD (Record = Aufnahme von DATA, genau eines COLLECTORS, mind. eines SIGNALS, von und bis zu einem bestimmten Zeitpunkt)
+[
+  { //Head-Metadata
+    "_id":"%COLLECTION.id%_%DATETIME%",
+    "record": {
+      "created":"DATETIME",
+      "started": { //<-- gibt an, wann das erste Element in die Datenbank geschrieben wurde
+        "stamp": "DATETIME",
+        "item": "DATA[FIRST]._id"
+      },
+      "ended": { //<-- gibt an, wann das letzte Element in die Datenbank geschrieben wurde
+        "stamp": "DATETIME",
+        "item": "DATA[LAST]._id"
+      },
+      "parent": "_id", //<-- wenn dieser Record zur selben Collection gehört und einen Vorgänger hat
+      "status": { //optional <-- hilfreich für die Verwaltung der Daten
+        "importedToPlattform": true,
+        "corruptData": true
+        //...
+      },
+    },
+    "collection": {
+      "id":"uuid",
+    }
+  },
+  //alle DATA die auf einmal von einem COLLECTOR (z.B.: MOM-Glove via String) kommt wird nach SIGNALs zerteilt und gesammelt in einen RECORD geschrieben
+  //siehe dazu auch MongoDB/BulkWriteOperations - https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/#db.collection.insertMany
+  { //DATA zum Zeitpunkt TIME-1
+    "_id": "MongoDB:uuid",
+    "data": {
+      "signal": {
+        //rfid
+        "uuid":"f22a93ca-6ef5-41e6-bd93-fecd463e6c76", //<-- gibt an um welches Signal, innerhalb der COLLECTION es sich handelt
+      },
+      "value":"",
+      "stamp": {
+        "microSeconds":"TIME-1" //<-- erstes Element hat den Timestamp "0" [microSeconds]
+      }
+    }
+  },
+  { //DATA zum Zeitpunkt TIME-1
+    "_id": "MongoDB:uuid",
+    "data": {
+      "signal": {
+        //grasp.sensorA
+        "uuid":"af1fde71-1940-4061-81a6-5cda950f7972",
+      },
+      "value":"",
+      "stamp": {
+        "microSeconds":"TIME-1"
+      }
+    }
+  },
+  { //DATA zum Zeitpunkt TIME-2
+    "_id": "MongoDB:uuid",
+    "data": {
+      "signal": {
+        //rfid
+        "uuid":"f22a93ca-6ef5-41e6-bd93-fecd463e6c76",
+      },
+      "value":"",
+      "stamp": {
+        "microSeconds":"TIME-2"
+      }
+    }
+  },
+  { //DATA zum Zeitpunkt TIME-2
+    "_id": "MongoDB:uuid",
+    "data": {
+      "signal": {
+        //grasp.sensorA
+        "uuid":"af1fde71-1940-4061-81a6-5cda950f7972",
+      },
+      "value":"",
+      "stamp": {
+        "microSeconds":"TIME-2"
+      }
+    }
+  }
+]

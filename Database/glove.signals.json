@@ -1,0 +1,83 @@
+[
+  {
+    "uuid":"f22a93ca-6ef5-41e6-bd93-fecd463e6c76",
+    "dataType":"String[000000000000|xxxxxxxxxxxx]",
+    "min":"12",
+    "max":"12",
+    "slug":"rfid",
+    "name":"RFID-ID",
+    "unit":false
+  },
+  {
+    "uuid":"af1fde71-1940-4061-81a6-5cda950f7972",
+    "slug":"grasp.sensorA",
+    "name":"Greifen-A",
+    "dataType":"Integer[0,1023]",
+    "min":"0",
+    "max":"1023",
+    "unit":"1"
+  },
+  {
+    "uuid":"65c93fe8-39d1-47bc-a61b-743f348f9793",
+    "slug":"grasp.sensorB",
+    "name":"Greifen-B",
+    "dataType":"Integer[0,1023]",
+    "min":"0",
+    "max":"1023",
+    "unit":"1"
+  },
+  {
+    "uuid":"a433e430-292a-4afb-89a8-5e1e46eac47a",
+    "slug":"grasp.sensorC",
+    "name":"Greifen-C",
+    "dataType":"Integer[0,1023]",
+    "min":"0",
+    "max":"1023",
+    "unit":"1"
+  },
+  {
+    "uuid":"b9b05441-14a6-47a6-b742-d23a235d098d",
+    "dataType":"Float[a,b]",
+    "min":"-9",
+    "max":"9",
+    "slug":"acceleration.x",
+    "name":"Beschleunigung x-Achse",
+    "unit":"m/s²"
+  },
+  {
+    "uuid":"587e98ca-938e-408d-9292-8feddeed1b91",
+    "dataType":"Float[a,b]",
+    "min":"-9",
+    "max":"9",
+    "slug":"acceleration.y",
+    "name":"Beschleunigung y-Achse",
+    "unit":"m/s²"
+  },
+  {
+    "uuid":"47ab9617-fd93-48b4-99ce-cc836e37552c",
+    "dataType":"Float[a,b]",
+    "min":"-9",
+    "max":"9",
+    "slug":"acceleration.z",
+    "name":"Beschleunigung z-Achse",
+    "unit":"m/s²"
+  },
+  {
+    "uuid":"30555360-b60b-429f-a84b-9563c9d52f3f",
+    "dataType":"Boolean[true|false]",
+    "min":false,
+    "max":true,
+    "slug":"userInputButton",
+    "name":"Bedienpanel Button",
+    "unit":false
+  },
+  {
+    "uuid":"2f6b776d-5124-4886-851b-0a4d20d2ca37",
+    "dataType":"Boolean[true|false]",
+    "min":false,
+    "max":true,
+    "slug":"handIsInGlove",
+    "name":"Hand in Hanschuh",
+    "unit":false
+  },
+]
